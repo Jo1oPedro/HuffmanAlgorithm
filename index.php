@@ -8,8 +8,8 @@ require_once __DIR__ . "/vendor/autoload.php";
 
 $input = "oi mundo";//file_get_contents(__DIR__ . "/lorem.txt");
 
-/*$huffman = new \Huffman\Code\Huffman($input);
-dd($huffman->compress());*/
+$huffman = new \Huffman\Code\Huffman($input);
+dd($huffman->compress(), $huffman->decompressString());
 
 $charactersQuantity = array_count_values(str_split($input));
 

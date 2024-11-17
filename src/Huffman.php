@@ -82,4 +82,35 @@ class Huffman
     {
         return $nodeLeft->getFreq() - $nodeRight->getFreq();
     }
+
+    public function decompressString()
+    {
+        $decompressedString = "";
+        $currentNode = $this->tree;
+
+        for($i = 0; $i < strlen($this->encodedString); $i++) {
+            $bit = $this->encodedString[$i];
+
+            if($bit == "0") {
+                $currentNode = $currentNode->getLeft();
+            } else {
+                $currentNode = $currentNode->getRight();
+            }
+
+            if($currentNode->getChar() !== null) {
+                $decompressedString .= $currentNode->getChar();
+                $currentNode = $this->tree;
+            }
+        }
+
+        return $decompressedString;
+    }
+
+    /*public function optimizeCompressedString(): string
+    {
+        $optimizedString = "";
+        foreach($this->encodedString as $string) {
+
+        }
+    }*/
 }
