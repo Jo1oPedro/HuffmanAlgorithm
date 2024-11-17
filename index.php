@@ -1,15 +1,17 @@
 <?php
 
+use Huffman\Code\Huffman;
 use Huffman\Code\Node;
 
 require_once __DIR__ . "/vendor/autoload.php";
 
 //$input = readline("Huffman text: ");
 
-$input = "oi mundo";//file_get_contents(__DIR__ . "/lorem.txt");
+$input = "oi m";//file_get_contents(__DIR__ . "/lorem.txt");
 
-$huffman = new \Huffman\Code\Huffman($input);
-dd($huffman->compress(), $huffman->decompressString());
+$huffman = new Huffman($input);
+echo $huffman->compress() . PHP_EOL;
+dd($huffman->decompressString());
 
 $charactersQuantity = array_count_values(str_split($input));
 

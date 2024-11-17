@@ -105,12 +105,4 @@ class Huffman
 
         return $decompressedString;
     }
-
-    /*public function optimizeCompressedString(): string
-    {
-        $optimizedString = "";
-        foreach($this->encodedString as $string) {
-
-        }
-    }*/
 }
