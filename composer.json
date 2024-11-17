@@ -1,0 +1,20 @@
+{
+    "name": "huffman/code",
+    "autoload": {
+        "psr-4": {
+            "Huffman\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "João Pedro",
+            "email": "joao.pedreira@estudante.ufjf.br"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^7.1"
+    },
+  "require": {
+    "ext-readline": "*"
+  }
+}
